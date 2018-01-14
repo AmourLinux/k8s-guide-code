@@ -16,3 +16,9 @@ kubectl --namespace=namespace-dev get pod
 kubectl create -f web-pod.yaml
 kubectl describe pod web
 
+# 资源配置范围管理 LimitRange
+kubectl create namespace limitrange-example
+kubectl --namespace=limitrange-example create -f limitrange.yaml
+kubectl --namespace=limitrange-example describe limitrange mylimits
+kubectl --namespace=limitrange-example create -f limitrange-pod.yaml
+kubectl --namespace=limitrange-example describe pod
